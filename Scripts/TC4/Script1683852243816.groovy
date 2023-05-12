@@ -2,7 +2,7 @@ import groovy.json.JsonOutput
 import internal.GlobalVariable as GlobalVariable
 
 /*
- * save the updated config information into an external JSON file
+ * demonstrate that we can save the updated config into an external JSON file
  */
 def myconfig = GlobalVariable.config
 myconfig['money'] = 12345

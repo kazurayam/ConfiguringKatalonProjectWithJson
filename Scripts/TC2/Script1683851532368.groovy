@@ -1,7 +1,7 @@
 import internal.GlobalVariable as GlobalVariable
 
 /*
- * update the GlobalVariable in memory
+ * demonstrate that we can update the GlobalVariable in memory
  */
 println "GlobalVariable.config before update: " + GlobalVariable.config
 
