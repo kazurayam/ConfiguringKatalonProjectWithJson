@@ -162,4 +162,4 @@ A [post](https://forum.katalon.com/t/how-to-update-map-globalvariable-permanentl
 
 The shortage of my approach is that it does not provide any GUI component to edit/view the JSON configuration as a part of Katalon Studio GUI just like it does for Execution Profiles. --- I don't mind it. I don't need any GUI support. Text editor is perfect for authoring JSON.
 
-Another shortage would be that this requires seasoned programming skill. --- I don't think it matters. Non-programmers would never want to persiste the updates to the GlobalVariables; that is highly programmatical.
+Another shortage would be that this requires seasoned programming skill. --- I don't think it matters. Non-programmers would never want to persist the updates to the GlobalVariables; so they would not need my solution at all.
