@@ -156,10 +156,9 @@ GlobalVariable.confing carried over: [bill:debit, home:mona lisa, money:credit]
 
 ## Conclusion
 
-I think that the built-in features in Katalon Studio GUI around GlobalVariable are designed with an assumption that *users will be happy and satisfied with manually updating Execution Profiles (= GlobalVariables); they would never want to update Execution Profiles on disk programmatically during the executions of Test Case scripts.*
+I think that the built-in features in Katalon Studio GUI around GlobalVariable are designed with an assumption that *users will be happy and satisfied with manually updating Execution Profiles (= GlobalVariables); they would never want to update Execution Profiles on disk programmatically during the executions of Test Case scripts.*  I think that this assumption is appropriate as Katalon Studio is designed for non-programmers.
+
 
 A [post](https://forum.katalon.com/t/how-to-update-map-globalvariable-permanently/88025/5) in Katalon user forum discussed how to break this design by overwriting XML files as the serialized format of Execution Profiles. I do not think their approach would be successful. I think we shouldn't try to modify the behavior of Katalon Studio. Just leave it as is. We should invent alternative way of configuring a Test Suite using Groovy scripting.
 
 The shortage of my approach is that it does not provide any GUI component to edit/view the JSON configuration as a part of Katalon Studio GUI just like it does for Execution Profiles. --- I don't mind it. I don't need any GUI support. Text editor is perfect for authoring JSON.
-
-Another shortage would be that this requires seasoned programming skill. --- I don't think it matters. Non-programmers would never want to persist the updates to the GlobalVariables; so they would not need my solution at all.
