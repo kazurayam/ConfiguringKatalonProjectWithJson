@@ -31,10 +31,12 @@ kspf   -[#purple]>x tester : tester find no change
 
 == step 3 ==
 tester -> kstc : run TC1
+kstc   -> tc1  : run TC1
 glbl   -[#blue]> gvgr  : loaded
-gvgr   -> tc1  : TC1 refers to the new GlobalVariable.foo
+gvgr   -> tc1  : TC1 refers to the value updated by TC2
 
 == step 4 ==
 tester -> kspf  : tester closes the project
 tester -> tester : back to the step1
+
 @enduml
