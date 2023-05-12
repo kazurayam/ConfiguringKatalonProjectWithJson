@@ -161,4 +161,4 @@ I think that the built-in features in Katalon Studio GUI around GlobalVariable a
 
 A [post](https://forum.katalon.com/t/how-to-update-map-globalvariable-permanently/88025/5) in Katalon user forum discussed how to break this design by overwriting XML files as the serialized format of Execution Profiles. I do not think their approach would be successful. I think we shouldn't try to modify the behavior of Katalon Studio. Just leave it as is. We should invent alternative way of configuring a Test Suite using Groovy scripting.
 
-The shortage of my approach is that it does not provide any GUI component to edit/view the JSON configuration as a part of Katalon Studio GUI just like it does for Execution Profiles. --- I don't mind it. I don't need any GUI support. Text editor is perfect for authoring JSON.
+A shortage of my approach is that it does not provide any GUI component to edit/view the JSON configuration as a part of Katalon Studio GUI just like it does for Execution Profiles. --- I don't mind it. I don't need any GUI support. Text editor is perfect for authoring JSON.
