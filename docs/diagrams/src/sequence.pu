@@ -1,7 +1,7 @@
 @startuml sequence
 actor       Tester        as tester
-participant "Katalon Studio\nedit Profile" as kspf
-participant "Katalon Studio\nrun Test Case" as kstc
+participant "Katalon Studio\nedit Profile UI" as kspf
+participant "Katalon Studio\nrun Test Case UI" as kstc
 database    "./Profiles/\ndefault.glbl" as glbl
 database    "./Libs/internal/\nGlobalVariable.groovy" as gvgr
 participant "Test Case TC1" as tc1
@@ -12,9 +12,15 @@ tester -> kspf : edit default profile,\nadd GlobalVariable.foo
 kspf   -> glbl : serialize the profile into XML file
 kspf   -> gvgr : generate Groovy source code
 tester -> kstc : run Test Case TC1
+kstc   -> tc1  : run
 gvgr   -> kstc : compile & load
 kstc   -> tc1  : refer to GlobalVariable.foo
 
 == step 2 ==
-
+tester -> kstc : run Test Case TC2
+kstc   -> tc2  : run
+tc2    -[#red]> glbl : modify XML using the GlobalVariableUpdater tool
+glbl   -[#purple]>x kspf : no notification
+kspf   -[#purple]>x gvgr : no updates
+kstc   -[#blue]> tc1  : will see the old GlogalVariable.foo
 @enduml
