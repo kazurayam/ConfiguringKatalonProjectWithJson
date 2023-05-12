@@ -1,7 +1,7 @@
 # Configuring a Katalon Studio project with a JSON file
 
 This is a [Katalon Studio](https://katalon.com/katalon-studio) project for demonstration purpose.
-You can download the zip of this project from the [Release] page,
+You can download the zip of this project from the [Release](https://github.com/kazurayam/ConfiguringKatalonProjectWithJson/releases/) page,
 unzip it, open it with your local Katalon Studio.
 
 This project was developed with Katalon Studio v8.3, but is
