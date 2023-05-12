@@ -7,20 +7,34 @@ database    "./Libs/internal/\nGlobalVariable.groovy" as gvgr
 participant "Test Case TC1" as tc1
 participant "Test Case TC2" as tc2
 
-== step 1 ==
-tester -> kspf : edit default profile,\nadd GlobalVariable.foo
-kspf   -> glbl : serialize the profile into XML file
+== step 0 ==
+tester -> kspf : tester opens a project
 kspf   -> gvgr : generate Groovy source code
+
+== step 1 ==
+glbl   -> kspf : load the Exceution Profile settings
+kspf   -> tester : show the current settings
+tester -> kspf : edit default profile,\nedit GlobalVariable.foo
+kspf   -> glbl : serialize the profile into XML file
 tester -> kstc : run Test Case TC1
-kstc   -> tc1  : run
+kstc   -> tc1  : run TC1
 gvgr   -> kstc : compile & load
-kstc   -> tc1  : refer to GlobalVariable.foo
+glbl   -> gvgr : loaded
+gvgr   -> tc1  : TC refers to GlobalVariable.foo
 
 == step 2 ==
 tester -> kstc : run Test Case TC2
-kstc   -> tc2  : run
+kstc   -> tc2  : run TC2
 tc2    -[#red]> glbl : modify XML using the GlobalVariableUpdater tool
-glbl   -[#purple]>x kspf : no notification
-kspf   -[#purple]>x gvgr : no updates
-kstc   -[#blue]> tc1  : will see the old GlogalVariable.foo
+glbl   -[#purple]>x kspf : no notification,
+kspf   -[#purple]>x tester : tester find no change
+
+== step 3 ==
+tester -> kstc : run TC1
+glbl   -[#blue]> gvgr  : loaded
+gvgr   -> tc1  : TC1 refers to the new GlobalVariable.foo
+
+== step 4 ==
+tester -> kspf  : tester closes the project
+tester -> tester : back to the step1
 @enduml
