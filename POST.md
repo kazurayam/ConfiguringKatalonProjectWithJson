@@ -89,4 +89,5 @@ Here I assume we have another Test Case named `TC2`, which is capable of changin
 
 Here I tried the `GlobalVariableUpdater` class to update GlobalVariable values runtime. It works fine except a point that the "edit Execution Profile" UI will be left un-updated. People would expect the UI would always show the truth always, but they wouldn't this case unfortunately.
 
+If the tester operates the “edit Execption Profile”, for example, switching the profile to display, then the UI would be refleshed with the latest XML; then he would see the updated value. He might be confused to see the change at that timing.
 
