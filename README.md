@@ -10,7 +10,7 @@ version-independent. It should work with any version.
 I developed this project in the hope to propose a alternative
 to the discussion in the Katalon User forum:
 
-- https://forum.katalon.com/t/how-to-update-map-globalvariable-permanently/88025/5
+- https://forum.katalon.com/t/how-to-update-map-globalvariable-permanently/88025/
 
 ## Problem to solve
 
@@ -18,9 +18,9 @@ Katalon Studio provides [Execution Profile and Global Variables](https://docs.ka
 
 >Execution Profile helps cover multiple and different environments to execute your automation test scripts with ease. You can configure the testing environment in terms of data and behaviors through Global variables.
 
-However you can not persist the values of Global Variables into Execution Profiles during test runs. You can only edit the values manually using Katalon Studio's GUI.
+You can update the value of GlobalVariable during test runs but you can not persist the updates into Execution Profiles. If you want to change the persisted values of Execution Profiles, manual edit in Katalon Studio's GUI is the only way.
 
-I want to find a way to generate configuration programmatically and persist it into disk in a Test Suite run, then later reuse the updated configuration in another session of Test Suite. How can achieve do it?
+I am not satisfied with this constraint. I want to find a way to update the config information programmatically and persist it into disk during a Test Suite run; then later I want to reuse the updated config information in another session of Test Suite. How can achieve it?
 
 ## Solution
 
