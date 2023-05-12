@@ -36,6 +36,38 @@ I want to find a way to generate configuration programmatically and persist it i
 
 ## Description of the demo implementation
 
+### JSON configuration file
+
+I created a text file in JSON format: [`<projectDir>/myconfig.json`](https://github.com/kazurayam/ConfiguringKatalonProjectWithJson/blob/master/myconfig.json)
+
+```
+{
+	"bill": "debit",
+	"home": "debit",
+	"money": "credit"
+}
+```
+
+### GlobalVariable.config
+
+I created a GlobalVariable named `config` in the `default` Execution Profile. I assigned the type `Null` to it.
+
+![GlobalVariable.config]()
+
+
+
+### Test Case TC1 --- load the JSON to GlobalVariable
+
+### Test Case TC2 --- update information programmatically
+
+### Test Case TC3 --- demonstrated that the updated information is carried over
+
+### Test Case TC4 --- persist the information into an external file
+
+### Test Suite TS1 --- run TC1 + TC2 + TC3 + TC4
+
+
+
 
 ## Conclusion
 
