@@ -24,13 +24,15 @@ I am not satisfied with this constraint. I want to find a way to update the conf
 
 ## Solution
 
-- I will add text files as a mean of configuration. In there I can express any information in JSON syntax. Thanks to the expressiveness of JSON, I can write anything in JSON.
+- I will add JSON text files as a container of configuration information. Thanks to the expressiveness of JSON, I can write anything.
 
 - I will create a GlobalVariable of type `Null`.
 
 - My test script will fully utilize the Groovy language [features of processing JSON](https://www.baeldung.com/groovy-json).
 
-- My test script will explicitly load a JSON configuration file, turn it into an Object, substitute it into a GlobalVariable. The GlobalVariable will be shared by all Test Cases in a Test Suite. My test script will update the Object during test run, and will explicitly save it into a JSON file. Thanks to the Groovy's features of processing JSON, it is quite straight-forward to implement this processing. I will show you a full set of sample code.
+- My test script will explicitly load a JSON configuration file, turn it into an Object, substitute it into a GlobalVariable. The GlobalVariable will be shared by all Test Cases in a Test Suite. My test script will update the Object during test run, and will explicitly save it into a JSON file.
+
+- Thanks to the Groovy's features of processing JSON, it is quite easy and straight-forward to implement this processing. I will show you a full set of sample code.
 
 - This approach is intended for seasoned programmers. I'm afraid, non-programmers can not enjoy this freedom.
 
@@ -124,9 +126,11 @@ f.text = JsonOutput.prettyPrint(JsonOutput.toJson(myconfig))
 println f.text
 ```
 
-Please note that the file name. If you specify a new name, then a new file will be created.
-If you specify the exact name of the source JSON file, then the file will be overwritten.
-Which way to take? It is up to you.
+Please pay attention to the output file name.
+If you specify a new name, then a new file will be created.
+If you specify the name of source JSON file, then the file will be overwritten.
+Which way to take?
+It is up to you.
 
 
 ### Test Suite TS1 --- run TC1 + TC2 + TC3 + TC4
@@ -154,6 +158,8 @@ GlobalVariable.confing carried over: [bill:debit, home:mona lisa, money:credit]
 
 I think that the built-in features in Katalon Studio GUI around GlobalVariable are designed with an assumption that *users will be happy and satisfied with manually updating Execution Profiles (= GlobalVariables); they would never want to update Execution Profiles on disk programmatically during the executions of Test Case scripts.*
 
-A [post](https://forum.katalon.com/t/how-to-update-map-globalvariable-permanently/88025/5) in Katalon user forum discussed how to break this built-in design by overwriting XML files as the serialized format of Execution Profiles. I do not think their approach is very successful. I think we had better not try to modify the behavior of Katalon Studio; we should leave it as is; we should add another way of configuring a Test Suite using Groovy scripting.
+A [post](https://forum.katalon.com/t/how-to-update-map-globalvariable-permanently/88025/5) in Katalon user forum discussed how to break this built-in design by overwriting XML files as the serialized format of Execution Profiles. I do not think their approach is very successful. I think we shouldn't try to modify the behavior of Katalon Studio. Rather, we should leave it as is. We should add another way of configuring a Test Suite using Groovy scripting.
+
+The shortage of my approach is that it does not provide any GUI component to edit/view the JSON configuration as a part of Katalon Studio GUI just like it does for Execution Profiles. --- I don't mind it. I don't need it anyway. Text editor is perfect for authoring JSON.
 
 Here I proposed an alternative approach of configuring a Katalon Test Suite with a JSON text file. I think this approach is simpler; easier to understand; quickly customizable. Have a look and try.
