@@ -44,7 +44,7 @@ public class GlobalVariable {
 
 ```
 
-See the following diagram.
+Then, see the following diagram.
 
 ![sequence](https://kazurayam.github.io/ConfiguringKatalonProjectWithJson/diagrams/out/sequence/sequence.png)
 
@@ -87,6 +87,6 @@ Here I assume we have another Test Case named `TC2`, which is capable of changin
 
 ## Discussion
 
-Here I tried the `GlobalVariableUpdater` class to update GlobalVariable values runtime. It works fine except a point that the "edit Execution Profile" UI will be left un-updated. People would expect the UI would always show the truth always, but their expect would not be met this case unfortunately.
+Here I tried the `GlobalVariableUpdater` class to update GlobalVariable values runtime. It works fine except a point that the "edit Execution Profile" UI will be left un-updated. People would expect the UI would always show the truth always, but they wouldn't this case unfortunately.
 
 
