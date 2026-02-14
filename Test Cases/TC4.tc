@@ -4,5 +4,6 @@
    <name>TC4</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>e8b906b5-7cf3-4bf4-9dac-3181f52fd8d7</testCaseGuid>
 </TestCaseEntity>

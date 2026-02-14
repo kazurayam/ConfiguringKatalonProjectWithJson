@@ -1,4 +1,5 @@
 import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
 import internal.GlobalVariable
 
 /*
@@ -7,3 +8,5 @@ import internal.GlobalVariable
  */
 JsonSlurper slurper = new JsonSlurper()
 GlobalVariable.config = slurper.parse(new File('./myconfig.json'))
+
+println "[TC1] " + JsonOutput.prettyPrint(JsonOutput.toJson(GlobalVariable.config))

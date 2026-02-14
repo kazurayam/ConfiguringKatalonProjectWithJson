@@ -4,7 +4,10 @@
    <name>ConfiguringKatalonProjectWithJson</name>
    <tag></tag>
    <UUID>3ee5430f-f3be-4e16-8bb7-4de3e0a4eb05</UUID>
+   <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
+   <modifiedEdition>ENTERPRISE</modifiedEdition>
+   <modifiedVersion>10.4.2</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
    <projectFileLocation>/Users/kazuakiurayama/katalon-workspace/ConfiguringKatalonProjectWithJson/ConfiguringKatalonProjectWithJson.prj</projectFileLocation>
    <sourceContent>

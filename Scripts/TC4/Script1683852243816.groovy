@@ -11,4 +11,4 @@ File f = new File('./myconfig2.json')
 // you can specify the original file name 'myconfig.json' to overwrite it if you want
 
 f.text = JsonOutput.prettyPrint(JsonOutput.toJson(myconfig)) 
-println f.text
+println "[TC4] " + f.text
