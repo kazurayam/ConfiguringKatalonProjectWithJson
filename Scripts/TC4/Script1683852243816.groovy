@@ -1,14 +1,17 @@
+import com.kazurayam.ks.ConfigIO
+
 import groovy.json.JsonOutput
 import internal.GlobalVariable as GlobalVariable
 
 /*
  * demonstrate that we can save the updated config into an external JSON file
  */
-def myconfig = GlobalVariable.config
-myconfig['money'] = 12345
+GlobalVariable.config['money'] = 12345
 
-File f = new File('./myconfig2.json')   
-// you can specify the original file name 'myconfig.json' to overwrite it if you want
+// save the config into a file
+// you can specify the original file name 'ksconfig.json' to overwrite it if you want to
+File f2 = new File('./ksconfig2.json')
+ConfigIO.write(GlobalVariable.config, f2)
 
-f.text = JsonOutput.prettyPrint(JsonOutput.toJson(myconfig)) 
-println "[TC4] " + f.text
+// look into the saved text
+println "[TC4] " + f2.text

@@ -6,7 +6,7 @@ import internal.GlobalVariable as GlobalVariable
  * demonstrate that we can retrieve the updated config file
  */
 
-File f = new File('./myconfig2.json')
+File f = new File('./ksconfig2.json')
 println "[TC9] " + f.text
 
 JsonSlurper slurper = new JsonSlurper()
